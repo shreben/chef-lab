@@ -1,6 +1,6 @@
 # Chef Module 7
 
-Check deployment after 'vagrant destroy && vagrant up'
+Deployment check after 'vagrant destroy && vagrant up'
 ```sh
 [student@epbyminw2467 chef]$ curl -iL http://192.168.168.168:8080/testweb
 HTTP/1.1 302 Moved Temporarily
