@@ -1,11 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
-  config.vm.box = "sbeliakou/centos-6.8-x86_64"
-  config.vm.hostname = "chef-server"
-  config.vm.network "private_network", ip: "192.168.168.168"
-  config.vm.provider "virtualbox" do |v|  
+Vagrant.configure('2') do |config|
+  config.vm.box = 'sbeliakou/centos-6.8-x86_64'
+  config.vm.hostname = 'chef-server'
+  config.vm.network 'private_network', ip: '192.168.168.168'
+  config.vm.provider 'virtualbox' do |v|  
 	v.memory = 1024
 	v.cpus = 1
 	v.linked_clone = true
