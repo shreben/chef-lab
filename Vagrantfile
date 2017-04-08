@@ -14,10 +14,9 @@ Vagrant.configure("2") do |config|
 	yum install -y git 2>&1 > /dev/null
 	yum install -y /vagrant/chef-12.19.36-1.el6.x86_64.rpm 2>&1 > /dev/null
 	yum install -y /vagrant/chefdk-1.2.22-1.el6.x86_64.rpm 2>&1 > /dev/null
-	rm -rf /root/chef-lab
+	/bin/rm -rf /root/chef-lab & cd /root
 	git clone -b module7 https://github.com/shreben/chef-lab.git 2>&1 > /dev/null
-	/bin/cp -r chef-lab/chef_cookbooks /root & /bin/cp -r chef-lab/.chef /root & rm -rf /root/chef-lab
-	cp /vagrant/jboss-as-7.1.1.Final.tar.gz /root/.chef/
-	chef-solo -c /root/.chef/module7_solo.rb
+	cp /vagrant/jboss-as-7.1.1.Final.tar.gz /root/chef-lab/.chef/
+	chef-solo -c /root/chef-lab/.chef/module7_solo.rb
 	SHELL
 end
