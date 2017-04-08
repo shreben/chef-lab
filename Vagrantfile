@@ -17,6 +17,6 @@ Vagrant.configure('2') do |config|
 	/bin/rm -rf /root/chef-lab & cd /root
 	git clone -b module7 https://github.com/shreben/chef-lab.git 2>&1 > /dev/null
 	cp /vagrant/jboss-as-7.1.1.Final.tar.gz /root/chef-lab/.chef/
-	chef-solo -c /root/chef-lab/.chef/module7_solo.rb
+	chef-solo -c /root/chef-lab/.chef/module7_solo.rb > /vagrant/client_output
 	SHELL
 end
