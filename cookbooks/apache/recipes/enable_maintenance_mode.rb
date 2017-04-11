@@ -5,7 +5,6 @@ template '/etc/httpd/conf.d/vhost_tomcat.conf' do
   variables({
     maintenance_file: node['apache']['maintenance_page']
   })
-  notifies :restart, "service[httpd]", :delayed
 end
 
 service 'httpd' do
