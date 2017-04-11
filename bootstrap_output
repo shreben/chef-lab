@@ -1,0 +1,109 @@
+[student@epbyminw2467 module8]$ knife bootstrap jboss --node-name jboss --run-list jboss
+Doing old-style registration with the validation key at /home/student/chef/module8/.chef/lab-validator.pem...
+Delete your validation key in order to use your user credentials instead
+
+Connecting to jboss
+root@jboss's password: 
+jboss -----> Existing Chef installation detected
+jboss Starting the first Chef Client run...
+jboss [2017-04-10T08:25:45+01:00] INFO: Forking chef instance to converge...
+jboss Starting Chef Client, version 12.19.36
+jboss [2017-04-10T08:25:45+01:00] INFO: *** Chef 12.19.36 ***
+jboss [2017-04-10T08:25:45+01:00] INFO: Platform: x86_64-linux
+jboss [2017-04-10T08:25:45+01:00] INFO: Chef-client pid: 15288
+jboss [2017-04-10T08:25:47+01:00] INFO: Setting the run_list to ["jboss"] from CLI options
+jboss [2017-04-10T08:25:47+01:00] INFO: Run List is [recipe[jboss]]
+jboss [2017-04-10T08:25:47+01:00] INFO: Run List expands to [jboss]
+jboss [2017-04-10T08:25:47+01:00] INFO: Starting Chef Run for jboss
+jboss [2017-04-10T08:25:47+01:00] INFO: Running start handlers
+jboss [2017-04-10T08:25:47+01:00] INFO: Start handlers complete.
+jboss [2017-04-10T08:25:47+01:00] INFO: HTTP Request Returned 404 Not Found: 
+jboss [2017-04-10T08:25:47+01:00] INFO: HTTP Request Returned 404 Not Found: 
+jboss [2017-04-10T08:25:47+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chef-server/organizations/lab/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+jboss resolving cookbooks for run list: ["jboss"]
+jboss [2017-04-10T08:25:48+01:00] INFO: Loading cookbooks [jboss@0.1.0, java@1.48.0, apt@6.0.1, windows@3.0.5, ohai@5.0.3, homebrew@3.0.0, ark@3.0.0, build-essential@8.0.0, seven_zip@2.0.2, mingw@2.0.0]
+jboss Synchronizing Cookbooks:
+jboss   - jboss (0.1.0)
+jboss   - java (1.48.0)
+jboss   - apt (6.0.1)
+jboss   - windows (3.0.5)
+jboss   - build-essential (8.0.0)
+jboss   - ohai (5.0.3)
+jboss   - homebrew (3.0.0)
+jboss   - ark (3.0.0)
+jboss   - seven_zip (2.0.2)
+jboss   - mingw (2.0.0)
+jboss Installing Cookbook Gems:
+jboss Compiling Cookbooks...
+jboss Converging 16 resources
+jboss Recipe: java::notify
+jboss   * log[jdk-version-changed] action nothing[2017-04-10T08:25:48+01:00] INFO: Processing log[jdk-version-changed] action nothing (java::notify line 29)
+jboss  (skipped due to action :nothing)
+jboss Recipe: java::openjdk
+jboss   * yum_package[java-1.7.0-openjdk] action install[2017-04-10T08:25:48+01:00] INFO: Processing yum_package[java-1.7.0-openjdk] action install (java::openjdk line 54)
+jboss  (up to date)
+jboss   * yum_package[java-1.7.0-openjdk-devel] action install[2017-04-10T08:25:51+01:00] INFO: Processing yum_package[java-1.7.0-openjdk-devel] action install (java::openjdk line 54)
+jboss  (up to date)
+jboss   * java_alternatives[set-java-alternatives] action set[2017-04-10T08:25:51+01:00] INFO: Processing java_alternatives[set-java-alternatives] action set (java::openjdk line 60)
+jboss  (up to date)
+jboss Recipe: java::set_java_home
+jboss   * directory[/etc/profile.d] action create[2017-04-10T08:25:54+01:00] INFO: Processing directory[/etc/profile.d] action create (java::set_java_home line 19)
+jboss  (up to date)
+jboss   * template[/etc/profile.d/jdk.sh] action create[2017-04-10T08:25:54+01:00] INFO: Processing template[/etc/profile.d/jdk.sh] action create (java::set_java_home line 23)
+jboss  (up to date)
+jboss Recipe: ark::default
+jboss   * yum_package[libtool, autoconf, make, unzip, rsync, gcc, xz-lzma-compat, bzip2, tar] action install[2017-04-10T08:25:54+01:00] INFO: Processing yum_package[libtool, autoconf, make, unzip, rsync, gcc, xz-lzma-compat, bzip2, tar] action install (ark::default line 21)
+jboss  (up to date)
+jboss Recipe: jboss::install
+jboss   * group[jboss-as] action create[2017-04-10T08:25:54+01:00] INFO: Processing group[jboss-as] action create (jboss::install line 5)
+jboss  (up to date)
+jboss   * linux_user[jboss-as] action create[2017-04-10T08:25:54+01:00] INFO: Processing linux_user[jboss-as] action create (jboss::install line 10)
+jboss  (up to date)
+jboss   * directory[/etc/jboss-as] action create[2017-04-10T08:25:54+01:00] INFO: Processing directory[/etc/jboss-as] action create (jboss::install line 19)
+jboss  (up to date)
+jboss   * ark[jboss-as] action install[2017-04-10T08:25:54+01:00] INFO: Processing ark[jboss-as] action install (jboss::install line 27)
+jboss 
+jboss     * directory[/opt/jboss-as/jboss-as-7.1.1] action create[2017-04-10T08:25:54+01:00] INFO: Processing directory[/opt/jboss-as/jboss-as-7.1.1] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 56)
+jboss  (up to date)
+jboss     * remote_file[/var/chef/cache/jboss-as-7.1.1.tar.gz] action create[2017-04-10T08:25:54+01:00] INFO: Processing remote_file[/var/chef/cache/jboss-as-7.1.1.tar.gz] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 62)
+jboss  (up to date)
+jboss     * execute[unpack /var/chef/cache/jboss-as-7.1.1.tar.gz] action nothing[2017-04-10T08:25:55+01:00] INFO: Processing execute[unpack /var/chef/cache/jboss-as-7.1.1.tar.gz] action nothing (/var/chef/cache/cookbooks/ark/resources/default.rb line 72)
+jboss  (skipped due to action :nothing)
+jboss     * execute[set owner on /opt/jboss-as/jboss-as-7.1.1] action nothing[2017-04-10T08:25:55+01:00] INFO: Processing execute[set owner on /opt/jboss-as/jboss-as-7.1.1] action nothing (/var/chef/cache/cookbooks/ark/resources/default.rb line 81)
+jboss  (skipped due to action :nothing)
+jboss     * link[/opt/jboss-as/current] action create[2017-04-10T08:25:55+01:00] INFO: Processing link[/opt/jboss-as/current] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 96)
+jboss  (up to date)
+jboss     * template[/etc/profile.d/jboss-as.sh] action create[2017-04-10T08:25:55+01:00] INFO: Processing template[/etc/profile.d/jboss-as.sh] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 101)
+jboss  (skipped due to only_if)
+jboss     * ruby_block[adding '/opt/jboss-as/jboss-as-7.1.1/bin' to chef-client ENV['PATH']] action run[2017-04-10T08:25:55+01:00] INFO: Processing ruby_block[adding '/opt/jboss-as/jboss-as-7.1.1/bin' to chef-client ENV['PATH']] action run (/var/chef/cache/cookbooks/ark/resources/default.rb line 115)
+jboss  (skipped due to only_if)
+jboss      (up to date)
+jboss   * template[/etc/jboss-as/jboss-as.conf] action create[2017-04-10T08:25:55+01:00] INFO: Processing template[/etc/jboss-as/jboss-as.conf] action create (jboss::install line 38)
+jboss  (up to date)
+jboss   * template[/etc/init.d/jboss-as] action create[2017-04-10T08:25:55+01:00] INFO: Processing template[/etc/init.d/jboss-as] action create (jboss::install line 51)
+jboss  (up to date)
+jboss   * service[jboss-as] action enable[2017-04-10T08:25:55+01:00] INFO: Processing service[jboss-as] action enable (jboss::install line 59)
+jboss  (up to date)
+jboss   * service[jboss-as] action start[2017-04-10T08:25:55+01:00] INFO: Processing service[jboss-as] action start (jboss::install line 59)
+jboss  (up to date)
+jboss Recipe: jboss::deploy
+jboss   * ark[hudson] action put[2017-04-10T08:25:55+01:00] INFO: Processing ark[hudson] action put (jboss::deploy line 5)
+jboss 
+jboss     * directory[/opt/jboss-as/current/standalone/deployments/hudson] action create[2017-04-10T08:25:55+01:00] INFO: Processing directory[/opt/jboss-as/current/standalone/deployments/hudson] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 132)
+jboss  (up to date)
+jboss     * remote_file[/var/chef/cache/hudson.zip] action create[2017-04-10T08:25:55+01:00] INFO: Processing remote_file[/var/chef/cache/hudson.zip] action create (/var/chef/cache/cookbooks/ark/resources/default.rb line 139)
+jboss  (up to date)
+jboss     * execute[unpack /var/chef/cache/hudson.zip] action nothing[2017-04-10T08:25:56+01:00] INFO: Processing execute[unpack /var/chef/cache/hudson.zip] action nothing (/var/chef/cache/cookbooks/ark/resources/default.rb line 148)
+jboss  (skipped due to action :nothing)
+jboss     * execute[set owner on /opt/jboss-as/current/standalone/deployments/hudson] action nothing[2017-04-10T08:25:56+01:00] INFO: Processing execute[set owner on /opt/jboss-as/current/standalone/deployments/hudson] action nothing (/var/chef/cache/cookbooks/ark/resources/default.rb line 157)
+jboss  (skipped due to action :nothing)
+jboss      (up to date)
+jboss   * template[/opt/jboss-as/current/standalone/deployments/hudson/hudson.xml] action create[2017-04-10T08:25:56+01:00] INFO: Processing template[/opt/jboss-as/current/standalone/deployments/hudson/hudson.xml] action create (jboss::deploy line 17)
+jboss  (up to date)
+jboss [2017-04-10T08:25:56+01:00] INFO: Chef Run complete in 8.652217036 seconds
+jboss 
+jboss Running handlers:
+jboss [2017-04-10T08:25:56+01:00] INFO: Running report handlers
+jboss Running handlers complete
+jboss [2017-04-10T08:25:56+01:00] INFO: Report handlers complete
+jboss Chef Client finished, 0/28 resources updated in 10 seconds
