@@ -1,0 +1,110 @@
+Node nginx exists, overwrite it? (Y/N) Client nginx exists, overwrite it? (Y/N) root@nginx's password: 
+nginx -----> Existing Chef installation detected
+nginx Starting the first Chef Client run...
+nginx [2017-04-11T22:15:52+01:00] INFO: Forking chef instance to converge...
+nginx Starting Chef Client, version 12.19.36[0m
+nginx [2017-04-11T22:15:52+01:00] INFO: *** Chef 12.19.36 ***
+nginx [2017-04-11T22:15:52+01:00] INFO: Platform: x86_64-linux
+nginx [2017-04-11T22:15:52+01:00] INFO: Chef-client pid: 3595
+nginx [2017-04-11T22:15:53+01:00] INFO: Setting the run_list to ["role[apache_web_server]"] from CLI options
+nginx [2017-04-11T22:15:53+01:00] INFO: Run List is [role[apache_web_server]]
+nginx [2017-04-11T22:15:53+01:00] INFO: Run List expands to [web]
+nginx [2017-04-11T22:15:53+01:00] INFO: Starting Chef Run for nginx
+nginx [2017-04-11T22:15:53+01:00] INFO: Running start handlers
+nginx [2017-04-11T22:15:53+01:00] INFO: Start handlers complete.
+nginx [2017-04-11T22:15:53+01:00] INFO: HTTP Request Returned 404 Not Found: 
+nginx [2017-04-11T22:15:53+01:00] INFO: HTTP Request Returned 404 Not Found: 
+nginx [2017-04-11T22:15:53+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chef-server/organizations/lab/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+nginx resolving cookbooks for run list: ["web"][0m
+nginx [2017-04-11T22:15:53+01:00] INFO: Loading cookbooks [web@0.1.0, web_apache@0.1.0, web_nginx@0.1.0]
+nginx Synchronizing Cookbooks:[0m
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/recipes/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/README.md in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/resources/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/.kitchen.yml in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/.gitignore in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/metadata.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/.gitignore in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/chefignore in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web/Berksfile in the cache.
+nginx   - web (0.1.0)[0m
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/Berksfile in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/README.md in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/recipes/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/providers/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/metadata.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/templates/index.html in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/.kitchen.yml in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_apache/chefignore in the cache.
+nginx   - web_apache (0.1.0)[0m
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/providers/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/recipes/default.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/templates/index.html in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/metadata.rb in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/Berksfile in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/.gitignore in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/README.md in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/.kitchen.yml in the cache.
+nginx [2017-04-11T22:15:54+01:00] INFO: Storing updated cookbooks/web_nginx/chefignore in the cache.
+nginx   - web_nginx (0.1.0)[0m
+nginx Installing Cookbook Gems:[0m
+nginx Compiling Cookbooks...[0m
+nginx Converging 1 resources[0m
+nginx Recipe: web_apache::default[0m
+nginx   * web[install apache] action install[2017-04-11T22:15:54+01:00] INFO: Processing web[install apache] action install (web_apache::default line 8)
+nginx 
+nginx     * yum_package[httpd] action install[2017-04-11T22:15:54+01:00] INFO: Processing yum_package[httpd] action install (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 6)
+nginx [2017-04-11T22:16:04+01:00] INFO: yum_package[httpd] installing httpd-2.2.15-59.el6.centos from base repository
+nginx [2017-04-11T22:16:09+01:00] INFO: yum_package[httpd] installed httpd at 2.2.15-59.el6.centos
+nginx 
+nginx       [32m- install version 2.2.15-59.el6.centos of package httpd[0m
+nginx [0m    * service[httpd] action enable[2017-04-11T22:16:09+01:00] INFO: Processing service[httpd] action enable (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 9)
+nginx [2017-04-11T22:16:09+01:00] INFO: service[httpd] enabled
+nginx 
+nginx       [32m- enable service service[httpd][0m
+nginx [0m    * service[httpd] action start[2017-04-11T22:16:09+01:00] INFO: Processing service[httpd] action start (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 9)
+nginx [2017-04-11T22:16:10+01:00] INFO: service[httpd] started
+nginx 
+nginx       [32m- start service service[httpd][0m
+nginx [0m  
+nginx [0m  * web[install apache] action setup[2017-04-11T22:16:10+01:00] INFO: Processing web[install apache] action setup (web_apache::default line 8)
+nginx 
+nginx     * template[/var/www/html/index.html] action create[2017-04-11T22:16:10+01:00] INFO: Processing template[/var/www/html/index.html] action create (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 15)
+nginx [2017-04-11T22:16:10+01:00] INFO: template[/var/www/html/index.html] created file /var/www/html/index.html
+nginx 
+nginx       [32m- create new file /var/www/html/index.html[0m[2017-04-11T22:16:10+01:00] INFO: template[/var/www/html/index.html] updated file contents /var/www/html/index.html
+nginx 
+nginx       [32m- update content in file /var/www/html/index.html from none to 7e7fb7[0m
+nginx       [37m--- /var/www/html/index.html	2017-04-11 22:16:10.018011016 +0100[0m
+nginx       [37m+++ /var/www/html/.chef-index20170411-3595-tb7jmg.html	2017-04-11 22:16:10.018011016 +0100[0m
+nginx       [37m@@ -1 +1,12 @@[0m
+nginx       [37m+<!DOCTYPE html>[0m
+nginx       [37m+<html lang="en">[0m
+nginx       [37m+<head>[0m
+nginx       [37m+    <meta charset="UTF-8">[0m
+nginx       [37m+    <title>Title</title>[0m
+nginx       [37m+</head>[0m
+nginx       [37m+<body>[0m
+nginx       [37m+<h1>Chef Lab Module 9</h1>[0m
+nginx       [37m+<h2>Powered by Apache</h2>[0m
+nginx       [37m+</body>[0m
+nginx       [37m+</html>[0m
+nginx [0m  
+nginx [0m  * web[install apache] action start[2017-04-11T22:16:10+01:00] INFO: Processing web[install apache] action start (web_apache::default line 8)
+nginx 
+nginx     * service[httpd] action start[2017-04-11T22:16:10+01:00] INFO: Processing service[httpd] action start (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 21)
+nginx  (up to date)
+nginx      (up to date)
+nginx [2017-04-11T22:16:10+01:00] INFO: Chef Run complete in 16.337220977 seconds
+nginx [0m
+nginx Running handlers:[0m
+nginx [2017-04-11T22:16:10+01:00] INFO: Running report handlers
+nginx Running handlers complete
+nginx [0m[2017-04-11T22:16:10+01:00] INFO: Report handlers complete
+nginx [0m
+nginx Deprecated features used![0m
+nginx   Using an LWRP provider by its name (WebApache) directly is no longer supported in Chef 12 and will be removed.  Use Chef::ProviderResolver.new(node, resource, action) instead. at 1 location:[0m
+nginx     - /var/chef/cache/cookbooks/web_apache/recipes/default.rb:10:in `block in from_file'[0m
+nginx    See https://docs.chef.io/deprecations_custom_resource_cleanups.html for further details.[0m
+nginx [0m
+nginx Chef Client finished, 6/8 resources updated in 17 seconds[0m
