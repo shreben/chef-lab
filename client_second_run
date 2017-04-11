@@ -1,0 +1,56 @@
+Starting Chef Client, version 12.18.31
+resolving cookbooks for run list: ["jboss::default"]
+Synchronizing Cookbooks:
+  - jboss (0.1.0)
+  - ark (3.0.0)
+  - apt (6.0.1)
+  - homebrew (3.0.0)
+  - build-essential (8.0.0)
+  - seven_zip (2.0.2)
+  - ohai (5.0.3)
+  - mingw (2.0.0)
+  - java (1.48.0)
+  - windows (3.0.5)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Converging 15 resources
+Recipe: java::notify
+  * log[jdk-version-changed] action nothing (skipped due to action :nothing)
+Recipe: java::openjdk
+  * yum_package[java-1.6.0-openjdk] action install (up to date)
+  * yum_package[java-1.6.0-openjdk-devel] action install (up to date)
+  * java_alternatives[set-java-alternatives] action set (up to date)
+Recipe: java::set_java_home
+  * directory[/etc/profile.d] action create (up to date)
+  * template[/etc/profile.d/jdk.sh] action create (up to date)
+Recipe: ark::default
+  * yum_package[libtool, autoconf, make, unzip, rsync, gcc, xz-lzma-compat, bzip2, tar] action install (up to date)
+Recipe: jboss::install
+  * group[jboss-as] action create (up to date)
+  * linux_user[jboss-as] action create (up to date)
+  * directory[/etc/jboss-as] action create (up to date)
+  * ark[jboss-as] action install
+    * directory[/opt/jboss-as/jboss-as-7.1.1] action create (up to date)
+    * remote_file[/root/chef-lab/.chef/jboss-as-7.1.1.tar.gz] action create (up to date)
+    * execute[unpack /root/chef-lab/.chef/jboss-as-7.1.1.tar.gz] action nothing (skipped due to action :nothing)
+    * execute[set owner on /opt/jboss-as/jboss-as-7.1.1] action nothing (skipped due to action :nothing)
+    * link[/opt/jboss-as/current] action create (up to date)
+    * template[/etc/profile.d/jboss-as.sh] action create (skipped due to only_if)
+    * ruby_block[adding '/opt/jboss-as/jboss-as-7.1.1/bin' to chef-client ENV['PATH']] action run (skipped due to only_if)
+     (up to date)
+  * template[/etc/jboss-as/jboss-as.conf] action create (up to date)
+  * template[/etc/init.d/jboss-as] action create (up to date)
+  * service[jboss-as] action enable (up to date)
+  * service[jboss-as] action start (up to date)
+Recipe: jboss::deploy
+  * ark[testweb] action put
+    * directory[/opt/jboss-as/current/standalone/deployments/testweb] action create (up to date)
+    * remote_file[/root/chef-lab/.chef/testweb.zip] action create (up to date)
+    * execute[unpack /root/chef-lab/.chef/testweb.zip] action nothing (skipped due to action :nothing)
+    * execute[set owner on /opt/jboss-as/current/standalone/deployments/testweb] action nothing (skipped due to action :nothing)
+     (up to date)
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 0/27 resources updated in 08 seconds
+
