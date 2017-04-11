@@ -1,1 +1,1 @@
-default['apache']['maintance_page'] = 'maintance.html'
+default['apache']['maintenance_page'] = 'maintenance.html'
