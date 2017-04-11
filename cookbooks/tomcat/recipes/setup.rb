@@ -1,5 +1,5 @@
 # setup java
-include 'java'
+include_recipe 'java'
 
 # setup tomcat
 package 'tomcat'
