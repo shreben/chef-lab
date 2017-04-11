@@ -1,15 +1,6 @@
 # install apache
 package 'httpd'
 
-# ensure vhost document root exists
-#directory '/home/apache/htdocs' do
-#  owner 'apache'
-#  group 'apache'
-#  mode '0755'
-#  action :create
-#  recursive true
-#end
-
 # copy maintenance page
 template '/var/www/html/maintenance.html' do
   source 'maintenance.html'
