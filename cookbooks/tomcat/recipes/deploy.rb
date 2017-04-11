@@ -1,17 +1,4 @@
 # include dependencies
-include_recipe 'ark'
-
-# deploy webapp
-#ark "testweb" do
-#  url "http://www.cumulogic.com/download/Apps/testweb.zip"
-#  path "/usr/share/tomcat/webapps"
-#  owner "tomcat"
-#  group "tomcat"
-#  creates "testweb.war"
-#  action :put
-#  strip_components 1
-#  notifies :restart, "service[tomcat]", :delayed
-#end
 
 remote_file '/tmp/testweb.zip' do
   source 'http://www.cumulogic.com/download/Apps/testweb.zip'
