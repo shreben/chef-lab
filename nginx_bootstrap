@@ -1,0 +1,60 @@
+root@nginx's password: 
+nginx -----> Existing Chef installation detected
+nginx Starting the first Chef Client run...
+nginx [2017-04-11T22:05:42+01:00] INFO: Forking chef instance to converge...
+nginx Starting Chef Client, version 12.19.36[0m
+nginx [2017-04-11T22:05:42+01:00] INFO: *** Chef 12.19.36 ***
+nginx [2017-04-11T22:05:42+01:00] INFO: Platform: x86_64-linux
+nginx [2017-04-11T22:05:42+01:00] INFO: Chef-client pid: 3249
+nginx [2017-04-11T22:05:45+01:00] INFO: Setting the run_list to ["role[nginx_web_server]"] from CLI options
+nginx [2017-04-11T22:05:45+01:00] INFO: Run List is [role[nginx_web_server]]
+nginx [2017-04-11T22:05:45+01:00] INFO: Run List expands to [web]
+nginx [2017-04-11T22:05:45+01:00] INFO: Starting Chef Run for nginx
+nginx [2017-04-11T22:05:45+01:00] INFO: Running start handlers
+nginx [2017-04-11T22:05:45+01:00] INFO: Start handlers complete.
+nginx [2017-04-11T22:05:45+01:00] INFO: HTTP Request Returned 404 Not Found: 
+nginx [2017-04-11T22:05:45+01:00] INFO: HTTP Request Returned 404 Not Found: 
+nginx [2017-04-11T22:05:45+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chef-server/organizations/lab/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+nginx resolving cookbooks for run list: ["web"][0m
+nginx [2017-04-11T22:05:46+01:00] INFO: Loading cookbooks [web@0.1.0, web_apache@0.1.0, web_nginx@0.1.0]
+nginx Synchronizing Cookbooks:[0m
+nginx   - web_apache (0.1.0)[0m
+nginx   - web_nginx (0.1.0)[0m
+nginx [2017-04-11T22:05:46+01:00] INFO: Storing updated cookbooks/web/.kitchen.yml in the cache.
+nginx   - web (0.1.0)[0m
+nginx Installing Cookbook Gems:[0m
+nginx Compiling Cookbooks...[0m
+nginx Converging 1 resources[0m
+nginx Recipe: web_nginx::default[0m
+nginx   * web[install nginx] action install[2017-04-11T22:05:46+01:00] INFO: Processing web[install nginx] action install (web_nginx::default line 8)
+nginx 
+nginx     * yum_package[nginx] action install[2017-04-11T22:05:46+01:00] INFO: Processing yum_package[nginx] action install (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 6)
+nginx  (up to date)
+nginx     * service[nginx] action enable[2017-04-11T22:05:52+01:00] INFO: Processing service[nginx] action enable (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 9)
+nginx  (up to date)
+nginx     * service[nginx] action start[2017-04-11T22:05:52+01:00] INFO: Processing service[nginx] action start (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 9)
+nginx  (up to date)
+nginx      (up to date)
+nginx   * web[install nginx] action setup[2017-04-11T22:05:52+01:00] INFO: Processing web[install nginx] action setup (web_nginx::default line 8)
+nginx 
+nginx     * template[/usr/share/nginx/html/index.html] action create[2017-04-11T22:05:52+01:00] INFO: Processing template[/usr/share/nginx/html/index.html] action create (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 15)
+nginx  (up to date)
+nginx      (up to date)
+nginx   * web[install nginx] action start[2017-04-11T22:05:52+01:00] INFO: Processing web[install nginx] action start (web_nginx::default line 8)
+nginx 
+nginx     * service[nginx] action start[2017-04-11T22:05:52+01:00] INFO: Processing service[nginx] action start (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 21)
+nginx  (up to date)
+nginx      (up to date)
+nginx [2017-04-11T22:05:53+01:00] INFO: Chef Run complete in 7.140348621 seconds
+nginx [0m
+nginx Running handlers:[0m
+nginx [2017-04-11T22:05:53+01:00] INFO: Running report handlers
+nginx Running handlers complete
+nginx [0m[2017-04-11T22:05:53+01:00] INFO: Report handlers complete
+nginx [0m
+nginx Deprecated features used![0m
+nginx   Using an LWRP provider by its name (WebNginx) directly is no longer supported in Chef 12 and will be removed.  Use Chef::ProviderResolver.new(node, resource, action) instead. at 1 location:[0m
+nginx     - /var/chef/cache/cookbooks/web_nginx/recipes/default.rb:10:in `block in from_file'[0m
+nginx    See https://docs.chef.io/deprecations_custom_resource_cleanups.html for further details.[0m
+nginx [0m
+nginx Chef Client finished, 0/8 resources updated in 10 seconds[0m
