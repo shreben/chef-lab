@@ -17,16 +17,11 @@ Vagrant.configure('2') do |config|
 	yum install -y /vagrant/chefdk-1.2.22-1.el6.x86_64.rpm 2>&1 > /dev/null
 	/bin/rm -rf /root/chef-lab & cd /root
 	git clone -b exittask https://github.com/shreben/chef-lab.git 2>&1 > /dev/null
-<<<<<<< HEAD
 	chef-solo -c chef-lab/.chef/exittask_solo.rb
 	echo $(curl -iL http://127.0.0.1/testweb)
 	chef-solo -c chef-lab/.chef/exittask_enable_solo.rb
 	echo $(curl -iL http://127.0.0.1/testweb)
 	chef-solo -c chef-lab/.chef/exittask_disable_solo.rb
 	echo $(curl -iL http://127.0.0.1/testweb)
-=======
-	chef-solo -c /root/chef-lab/.chef/module7_solo.rb > /vagrant/client_output
-	chef-solo -c /root/chef-lab/.chef/module7_solo.rb > /vagrant/client_output
->>>>>>> a466df2f6bab3d39af8a81016ac08c2c177a1913
 	SHELL
 end
